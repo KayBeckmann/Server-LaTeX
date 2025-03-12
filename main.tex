@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{book}
+
+% Kodierung, Sprache und Schrift
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Grafiken, Tabellen und Hyperlinks
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+% Seitenlayout
+\usepackage{geometry}
+\geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=30mm}
+
+% Kopf- und Fußzeilen mit fancyhdr
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % alle Kopf- und Fußzeilenfelder leeren
+% Auf geraden Seiten links: Chapter-Titel; auf ungeraden Seiten rechts: Section-Titel
+\fancyhead[LE]{\leftmark} 
+\fancyhead[RO]{\rightmark}
+\fancyfoot[C]{\thepage}
+% Für plain Seiten (z. B. Kapitelanfang) Seitenzahl zentriert
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+}
+
+% Inhaltsverzeichnis auf Deutsch
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+
+\title{Server für klein Betriebe und Heimgebrauch}
+\author{Kay Beckmann}
+\date{5. September 2017}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+\include{vorwort}   % Vorwort (unnummeriertes Kapitel)
+\include{chapter1}  % Kapitel 1: Analyse und Vorbereitung
+\include{chapter2}  % Kapitel 2: Einrichtung
+\include{chapter3}  % Kapitel 3: Planmäßige Materialerhaltung
+
+\end{document}
